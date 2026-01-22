@@ -1,0 +1,122 @@
+Using device: cpu
+Dataset loaded: 15809 training images, 3953 validation images
+
+Starting training...
+
+Epoch 1/15
+  Train Loss: 0.3430 | Train Acc: 88.7%
+  Val Loss: 0.1956   | Val Acc: 93.3%
+  ✓ Best model saved!
+
+Epoch 2/15
+  Train Loss: 0.1833 | Train Acc: 94.0%
+  Val Loss: 0.1726   | Val Acc: 94.1%
+  ✓ Best model saved!
+
+Epoch 3/15
+  Train Loss: 0.1416 | Train Acc: 95.0%
+  Val Loss: 0.1638   | Val Acc: 94.6%
+  ✓ Best model saved!
+  💾 Checkpoint saved (epoch 3)
+
+Epoch 4/15
+  Train Loss: 0.1136 | Train Acc: 96.1%
+  Val Loss: 0.1542   | Val Acc: 94.8%
+  ✓ Best model saved!
+
+Epoch 5/15
+  Train Loss: 0.0961 | Train Acc: 96.6%
+  Val Loss: 0.1561   | Val Acc: 94.4%
+
+Epoch 6/15
+  Train Loss: 0.0829 | Train Acc: 97.2%
+  Val Loss: 0.1544   | Val Acc: 95.0%
+  ✓ Best model saved!
+  💾 Checkpoint saved (epoch 6)
+
+Epoch 7/15
+  Train Loss: 0.0659 | Train Acc: 97.7%
+  Val Loss: 0.1501   | Val Acc: 95.1%
+  ✓ Best model saved!
+
+Epoch 8/15
+  Train Loss: 0.0593 | Train Acc: 98.0%
+  Val Loss: 0.1584   | Val Acc: 95.0%
+
+Epoch 9/15
+  Train Loss: 0.0523 | Train Acc: 98.3%
+  Val Loss: 0.1612   | Val Acc: 94.9%
+  💾 Checkpoint saved (epoch 9)
+
+Epoch 10/15
+  Train Loss: 0.0518 | Train Acc: 98.2%
+  Val Loss: 0.1660   | Val Acc: 95.0%
+
+Epoch 11/15
+  Train Loss: 0.0340 | Train Acc: 98.9%
+  Val Loss: 0.1643   | Val Acc: 95.4%
+  ✓ Best model saved!
+
+Epoch 12/15
+  Train Loss: 0.0285 | Train Acc: 99.1%
+  Val Loss: 0.1737   | Val Acc: 95.2%
+  💾 Checkpoint saved (epoch 12)
+
+Epoch 13/15
+  Train Loss: 0.0237 | Train Acc: 99.3%
+  Val Loss: 0.1752   | Val Acc: 95.2%
+
+Epoch 14/15
+  Train Loss: 0.0215 | Train Acc: 99.4%
+  Val Loss: 0.1872   | Val Acc: 95.2%
+
+Epoch 15/15
+  Train Loss: 0.0171 | Train Acc: 99.6%
+  Val Loss: 0.1853   | Val Acc: 95.3%
+  💾 Checkpoint saved (epoch 15)
+
+============================================================
+Training complete! Best validation accuracy: 95.4%
+============================================================
+
+💾 Final checkpoint saved to Desktop
+
+Detailed Performance Metrics:
+------------------------------------------------------------
+
+Per-Material Performance:
+              precision    recall  f1-score   support
+
+     plastic      0.928     0.894     0.910       404
+       paper      0.959     0.946     0.953       710
+       metal      0.862     0.897     0.879       195
+       glass      0.938     0.933     0.935       628
+     organic      0.957     0.975     0.966       204
+       other      0.972     0.980     0.976      1812
+
+    accuracy                          0.953      3953
+   macro avg      0.936     0.938     0.937      3953
+weighted avg      0.953     0.953     0.953      3953
+
+
+Confusion Matrix:
+(Rows = actual material, Columns = predicted material)
+[[ 361    7    4   23    0    9]
+ [   5  672    5    5    3   20]
+ [   1    3  175    8    0    8]
+ [  15    2   10  586    2   13]
+ [   0    2    0    1  199    2]
+ [   7   15    9    2    4 1775]]
+
+Per-Material Accuracy:
+  plastic   :  89.4%
+  paper     :  94.6%
+  metal     :  89.7%
+  glass     :  93.3%
+  organic   :  97.5%
+  other     :  98.0%
+
+============================================================
+Model saved to best_material_classifier.pth
+Ready for testing! Good luck with your science fair project!
+============================================================
