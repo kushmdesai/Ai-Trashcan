@@ -2,12 +2,10 @@ import torch
 from torch import nn
 from torchvision import models, transforms
 from PIL import Image
-from dotenv import load_dotenv
 import sys
 import os
 
 # setup
-load_dotenv()
 MATERIALS = ["plastic", "paper", "metal", "glass", "organic", "other"]
 MODEL_PATH = "./best_material_classifier.pth"
 
