@@ -9,7 +9,7 @@ import os
 # setup
 load_dotenv()
 MATERIALS = ["plastic", "paper", "metal", "glass", "organic", "other"]
-MODEL_PATH = os.getenv("MODEL_PATH")
+MODEL_PATH = "./best_material_classifier.pth"
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f"Using device: {device}")
