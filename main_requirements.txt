@@ -10,7 +10,7 @@ pillow==11.3.0
 protobuf==6.33.2
 pyserial==3.5
 sympy==1.14.0
-filelock==3.19.1
+filelock==3.20.3
 fsspec==2025.10.0
 Jinja2==3.1.6
 MarkupSafe==3.0.3
@@ -36,7 +36,7 @@ coloredlogs==15.0.1
 datasets==4.5.0
 dill==0.4.0
 exceptiongroup==1.3.1
-filelock==3.19.1
+filelock==3.20.3
 flatbuffers==25.12.19
 frozenlist==1.8.0
 fsspec==2025.10.0
@@ -92,7 +92,7 @@ coloredlogs==15.0.1
 datasets==4.5.0
 dill==0.4.0
 exceptiongroup==1.3.1
-filelock==3.19.1
+filelock==3.20.3
 flatbuffers==25.12.19
 frozenlist==1.8.0
 fsspec==2025.10.0
@@ -161,7 +161,7 @@ fastapi==0.128.0
 fastapi-cli==0.0.20
 fastapi-cloud-cli==0.11.0
 fastar==0.8.0
-filelock==3.19.1
+filelock==3.20.3
 Flask==3.1.2
 flatbuffers==25.12.19
 frozenlist==1.8.0
