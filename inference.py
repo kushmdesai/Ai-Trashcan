@@ -41,33 +41,70 @@ classifier.eval()
 print("Model loaded successfully.\n")
 print("="*60)
 
-def classifiy_image(image_path):
+def classify_pil_image(pil_image):
+    """
+    Classify a PIL Image object directly (for server use)
+    
+    Args:
+        pil_image: PIL Image object in RGB format
+        
+    Returns:
+        tuple: (predicted_material, confidence_score, all_probs) or None if error
+    """
+    try:
+        # Ensure image is in RGB format
+        if pil_image.mode != 'RGB':
+            pil_image = pil_image.convert('RGB')
+        
+        # Preprocess image
+        image_tensor = transform(pil_image).unsqueeze(0).to(device)
+        
+        # Run Inference
+        with torch.no_grad():
+            features = feature_extractor(image_tensor)
+            outputs = classifier(features)
+            probabilities = torch.softmax(outputs, dim=1)
+            confidence, predicted_idx = torch.max(probabilities, 1)
+
+        predicted_material = MATERIALS[predicted_idx.item()]
+        confidence_score = confidence.item() * 100
+        all_probs = probabilities[0].cpu().numpy()
+
+        return predicted_material, confidence_score, all_probs
+    
+    except Exception as e:
+        print(f"Error during classification: {e}")
+        return None
+
+def classify_image(image_path):
+    """
+    Classify an image from a file path (for command-line use)
+    
+    Args:
+        image_path: Path to the image file
+        
+    Returns:
+        tuple: (predicted_material, confidence_score, all_probs) or None if error
+    """
     if not os.path.exists(image_path):
         print(f"Error: Image not found at {image_path}")
         return None
     
     try:
+        # Load image from file
         image = Image.open(image_path).convert("RGB")
-        image_tensor = transform(image).unsqueeze(0).to(device)
+        
+        # Use the PIL image classification function
+        return classify_pil_image(image)
+        
     except Exception as e:
         print(f"Error processing image: {e}")
         return None
 
-    # Run Inference
-    with torch.no_grad():
-        features = feature_extractor(image_tensor)
-        outputs = classifier(features)
-        probabilities = torch.softmax(outputs, dim=1)
-        confidence, predicted_idx = torch.max(probabilities, 1)
-
-    predicted_material = MATERIALS[predicted_idx.item()]
-    confidence_score = confidence.item() * 100
-
-    all_probs = probabilities[0].cpu().numpy()
-
-    return predicted_material, confidence_score, all_probs
-
 def print_results(image_path, predicted_material, confidence_score, all_probs):
+    """
+    Print the classification results in a nice format
+    """
     print(f"\nImage: {os.path.basename(image_path)}")
     print("-" * 60)
     print(f"Predicted Material: {predicted_material.upper()}")
@@ -84,6 +121,7 @@ def print_results(image_path, predicted_material, confidence_score, all_probs):
 
     print("="*60)
 
+# Main execution for command-line use
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         print("Usage: python inference.py <path_to_image>")
@@ -96,7 +134,7 @@ if __name__ == "__main__":
     image_paths = sys.argv[1:]
 
     for image_path in image_paths:
-        result = classifiy_image(image_path)
+        result = classify_image(image_path)
         if result:
             predicted_material, confidence_score, all_probs = result
             print_results(image_path, predicted_material, confidence_score, all_probs)
