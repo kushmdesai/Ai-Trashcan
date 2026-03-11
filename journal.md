@@ -114,3 +114,52 @@ Today we worked on the CAD  model of the sliding door mechanism. It was a 25cm x
 **What we did today:**
 
 Today we drew the dimensions onto a carboard template and cut it out to get a top piece with the dimensions of 25cm x 25cm with a circle that has the diameter of 20cm and a the sliding door system below it. Also a big thanks to MR.Springett who printed the gear & rack for us after my printer got clogged. We also hot glued everything together into the right spot. We noticed that some of the cardboard pieces were slightly bigger but in the end they all fit together perfectly after a slight trim. Surprisngly it actually helped a lot that we had a cad model as we could double check dimensions and change them before we actually glue everything in and the fact that if i am not sure where something goes I can just go back and check.
+
+## Feb 15, 2026
+**Time: 2:35**
+
+**What we did today:**
+
+We tested the rotating chute mechansim and the motor was not strong enough so we decided to think about another plan. We decided that we can make a unique plan that would allow autonmous movement. It worked something like this.
+
+There are three chutes that the trash can fall through. The middle is the home chute that the camera rests on and is blocked in the middle. If you move it right then it falls into the chute on the right but if you move it left then there is a moving flap that will direct it to the middle or left chute.
+
+## Feb 21, 2026
+**6:00**
+
+**What we did today:**
+
+We build the frame out of jinx wood but its not very strong yet as we've hot glued it togethor. Also we used 12 inch drawer slides which are not long enough to move to all three frames so we have get different ones.
+
+## Feb 22, 2026
+**2:55**
+
+**What we did today:**
+
+We got the new drawer slides and super glued them on. The connection is not very strong but it sticks so its ok for now. We also built the carboard flap to direct the chute to either the middle or the left chute.
+
+## Feb 28, 2026
+**3:30**
+
+**What we did today:**
+
+We built the carboard body, this greatly strenghend the structural inegrity and allows us to place the body on top of something. We also painted the body white which allows us to now put the sensors on top.
+
+## Mar 1, 2026
+**1:15**
+
+**What we did today:**
+
+Today we added led camera and the pir sensor on it, entering the final phase of the project. The code was working ok with the sensors and the test scripts all worked.
+
+## Mar 7, 2026
+**3:45**
+
+**What we did today:**
+We added the led strip and made the output of the led strip be the color of the bin it should go in.
+
+## Mar 8, 2026
+**1:15**
+
+**What we did today:**
+We finished the building of the project by adding the motor to the flap and also brought it to school to show to our teachers.
